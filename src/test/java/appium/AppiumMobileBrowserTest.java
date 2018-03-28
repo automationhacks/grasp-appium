@@ -16,6 +16,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.net.MalformedURLException;
 import java.net.URL;
 
+import static junit.framework.Assert.assertTrue;
 import static junit.framework.TestCase.assertEquals;
 
 public class AppiumMobileBrowserTest {
@@ -26,8 +27,10 @@ public class AppiumMobileBrowserTest {
     @Before
     public void setUp() {
         capabilities = new DesiredCapabilities();
-        capabilities.setCapability("deviceName", "donatello");
-        capabilities.setCapability("browserName", "Browser");
+        capabilities.setCapability("deviceName", "Android device");
+        capabilities.setCapability("browserName", "Chrome");
+        capabilities.setCapability("appPackage", "com.android.chrome");
+        capabilities.setCapability("appActivity", "com.google.android.apps.chrome.Main");
 
         try {
             driver = new AndroidDriver(new URL("http://127.0.0.1:4723/wd/hub"), capabilities);
@@ -44,30 +47,29 @@ public class AppiumMobileBrowserTest {
 
     @Test
     public void performGoogleSearch() {
-        driver.get("https://www.google.com");
+        driver.get("https://facebook.com");
 
         (new WebDriverWait(driver, 10)).
-                until(ExpectedConditions.presenceOfElementLocated(By.id("lst-ib"))).
+                until(ExpectedConditions.presenceOfElementLocated(By.id("m_login_email"))).
                 sendKeys("appium.io");
 
-        (new WebDriverWait(driver, 10)).
-                until(ExpectedConditions.elementToBeClickable(By.name("btnG"))).
-                        click();
+        WebElement searchResult = (new WebDriverWait(driver, 10)).
+                until(ExpectedConditions.presenceOfElementLocated(By.xpath("//button[@name=\"login\"]")));
+        searchResult.click();
 
         boolean found = false;
 
         try {
-            WebElement searchResult = (new WebDriverWait(driver, 10)).
-                    until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("a[href=\"http://appium.io/\"]")));
-
-            if(searchResult.isDisplayed())
+            WebElement password = (new WebDriverWait(driver, 10)).
+                    until(ExpectedConditions.presenceOfElementLocated(By.id("m_login_password")));
+            if(password.isDisplayed())
                 found = true;
         }
         catch (NoSuchElementException e) {
-            System.out.println("Element not displayed successfully");
+            System.out.println("Password box not displayed successfully");
         }
 
-        assertEquals(found, true);
+        assertTrue(found);
 
     }
 }
