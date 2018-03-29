@@ -1,6 +1,6 @@
 package appium.course;
 
-import appium.Base;
+import appium.BaseAndroid;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileBy;
 import org.openqa.selenium.By;
@@ -11,7 +11,7 @@ import org.testng.annotations.Test;
 
 import java.util.concurrent.TimeUnit;
 
-public class BasicTest {
+public class BasicAndroidTest {
 
     private AppiumDriver driver;
 
@@ -26,7 +26,7 @@ public class BasicTest {
      */
     @Test
     public void basicTest() {
-        driver = Base.getDriver();
+        driver = BaseAndroid.getDriver();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
         WebElement preference = (
@@ -59,7 +59,7 @@ public class BasicTest {
 
     @Test
     public void usingAndroidUIAutomator() {
-        driver = Base.getDriver();
+        driver = BaseAndroid.getDriver();
         // MobileBy with AndroidUIAutomator can be used to identify elements
         // Syntax ("attribute("value")")
         driver.findElement(MobileBy.AndroidUIAutomator("text(\"Views\")")).click();

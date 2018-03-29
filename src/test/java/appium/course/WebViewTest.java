@@ -1,6 +1,6 @@
 package appium.course;
 
-import appium.Base;
+import appium.BaseAndroid;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileBy;
 import org.junit.Test;
@@ -11,7 +11,7 @@ public class WebViewTest {
 
     @Test
     public void handleWebViewTest() {
-        driver = Base.getDriver();
+        driver = BaseAndroid.getDriver();
         driver.findElementById("Views").click();
         String scrollCmd = "new UiScrollable(new UiSelector()).scrollIntoView(text(\"WebView\"))";
         driver.findElement(MobileBy.AndroidUIAutomator(scrollCmd));

@@ -1,6 +1,6 @@
 package appium.course;
 
-import appium.Base;
+import appium.BaseAndroid;
 import io.appium.java_client.AppiumDriver;
 import org.junit.Test;
 
@@ -10,7 +10,7 @@ public class DriverSpecificTest {
 
     @Test
     public void driverSpecificMethods() {
-        driver = Base.getDriver();
+        driver = BaseAndroid.getDriver();
 
         // Get context: Native, Hybrid or WebView
         System.out.println(driver.getContext());

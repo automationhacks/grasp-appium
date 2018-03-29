@@ -1,6 +1,6 @@
 package appium.course;
 
-import appium.Base;
+import appium.BaseAndroid;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileBy;
 import io.appium.java_client.TouchAction;
@@ -23,7 +23,7 @@ public class GesturesTest {
      */
     @Test
     public void longPressTest() {
-        driver = Base.getDriver();
+        driver = BaseAndroid.getDriver();
 
         action = new TouchAction(driver);
         action.tap(driver.findElementByXPath("//android.widget.TextView[@content-desc=\"Views\"]"));
@@ -50,7 +50,7 @@ public class GesturesTest {
      */
     @Test
     public void swipeOnDateWidgetTest() {
-        driver = Base.getDriver();
+        driver = BaseAndroid.getDriver();
 
         driver.findElementById("Views").click();
         driver.findElementById("Date Widgets").click();
@@ -70,7 +70,7 @@ public class GesturesTest {
      */
     @Test
     public void scrollIntoViewTest() {
-        driver = Base.getDriver();
+        driver = BaseAndroid.getDriver();
 
         driver.findElementById("Views").click();
         String androidCmd = "new UiScrollable(new UiSelector()).scrollIntoView(text(\"Radio Group\"))";
@@ -82,7 +82,7 @@ public class GesturesTest {
      */
     @Test
     public void dragAndDropTest() {
-        driver = Base.getDriver();
+        driver = BaseAndroid.getDriver();
 
         driver.findElement(By.id("Views")).click();
         driver.findElementById("Drag and Drop").click();
