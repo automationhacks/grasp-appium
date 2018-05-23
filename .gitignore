@@ -43,4 +43,4 @@ gradle-app.setting
 /out
 /build
 /bin
-/resources/ios/
+ios/
