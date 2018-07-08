@@ -19,6 +19,7 @@ public class SessionCommandsTest {
 
     @BeforeMethod
     public void setup() throws MalformedURLException{
+
         // Create capabilities object and start a driver session instance
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability(MobileCapabilityType.PLATFORM_NAME, "Android");
@@ -36,7 +37,7 @@ public class SessionCommandsTest {
     @Test
     public void sessionStartTest() {
         String sessionId = driver.getSessionId().toString();
-        System.out.println(sessionId);
+        System.out.println("Appium session id: " + sessionId);
     }
 
     @Test
@@ -48,6 +49,7 @@ public class SessionCommandsTest {
     @AfterMethod
     public void teardown() {
         // End session
+        System.out.println("Terminating appium run session");
         driver.quit();
     }
 }

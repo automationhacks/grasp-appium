@@ -69,6 +69,8 @@ public class AppiumMobileBrowserTest {
             System.out.println("Password box not displayed successfully");
         }
 
+        driver.navigate().back();
+
         assertTrue(found);
 
     }
