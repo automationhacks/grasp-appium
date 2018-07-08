@@ -15,6 +15,15 @@ def driver():
         'newCommandTimeOut': '2400000'
     }
 
+    caps = {
+        'platformName': 'Android',
+        'deviceName': 'Automation',
+        'appPackage': 'io.appium.android.apis',
+        'appActivity': 'io.appium.android.apis.ApiDemos',
+        'app': '/Users/gaurav/personal/development/grasp-appium/src/test/resources/android/ApiDemos-debug.apk',
+        'newCommandTimeOut': '2400000'
+    }
+
     driver = webdriver.Remote('http://localhost:4723/wd/hub', caps)
     yield driver
     driver.quit()
