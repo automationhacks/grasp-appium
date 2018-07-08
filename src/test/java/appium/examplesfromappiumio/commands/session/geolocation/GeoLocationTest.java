@@ -1,4 +1,4 @@
-package appium.selfexploration.commands.geolocation;
+package appium.examplesfromappiumio.commands.session.geolocation;
 
 import appium.BaseAndroid;
 import io.appium.java_client.AppiumDriver;

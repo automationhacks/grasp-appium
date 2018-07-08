@@ -1,4 +1,4 @@
-package appium.selfexploration.commands.session;
+package appium.examplesfromappiumio.commands.session;
 
 import appium.BaseAndroid;
 import appium.BaseIOS;

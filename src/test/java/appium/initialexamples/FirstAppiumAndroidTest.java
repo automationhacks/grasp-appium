@@ -1,4 +1,4 @@
-package appium;
+package appium.initialexamples;
 
 /*
 This test checks if error pop up is displayed on the app after entering an invalid user name and password.

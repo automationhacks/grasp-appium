@@ -1,4 +1,4 @@
-package appium;
+package appium.initialexamples;
 
 /*
 Simple test to verify addition of 2 numbers for IOS app

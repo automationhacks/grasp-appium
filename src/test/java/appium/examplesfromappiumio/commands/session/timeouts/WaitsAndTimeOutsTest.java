@@ -1,4 +1,4 @@
-package appium.selfexploration.commands.timeouts;
+package appium.examplesfromappiumio.commands.session.timeouts;
 
 import appium.BaseAndroid;
 import io.appium.java_client.AppiumDriver;

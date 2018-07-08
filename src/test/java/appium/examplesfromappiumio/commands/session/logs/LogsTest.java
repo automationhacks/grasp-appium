@@ -1,4 +1,4 @@
-package appium.selfexploration.commands.logs;
+package appium.examplesfromappiumio.commands.session.logs;
 
 import appium.BaseAndroid;
 import io.appium.java_client.AppiumDriver;

@@ -1,4 +1,4 @@
-package appium.selfexploration.commands.orientation;
+package appium.examplesfromappiumio.commands.session.orientation;
 
 import appium.BaseAndroid;
 import io.appium.java_client.AppiumDriver;

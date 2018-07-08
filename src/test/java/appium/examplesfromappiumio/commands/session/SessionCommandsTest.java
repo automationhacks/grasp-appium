@@ -1,4 +1,4 @@
-package appium.selfexploration.commands.session;
+package appium.examplesfromappiumio.commands.session;
 
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.android.AndroidDriver;
