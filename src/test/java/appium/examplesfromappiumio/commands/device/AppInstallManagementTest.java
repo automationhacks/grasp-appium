@@ -1,19 +1,31 @@
 package appium.examplesfromappiumio.commands.device;
 
-import appium.BaseTest;
+import appium.BaseAndroid;
 import io.appium.java_client.android.AndroidDriver;
+import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
 import java.io.File;
 import java.time.Duration;
+import java.util.Map;
 
-public class AppInstallManagementTest extends BaseTest {
+public class AppInstallManagementTest {
     private AndroidDriver androidDriver;
+
+    @BeforeTest
+    public void setUp() {
+        androidDriver = (AndroidDriver) BaseAndroid.getDriver();
+    }
+
+    @AfterTest
+    public void teardown() {
+        androidDriver.quit();
+    }
 
     @Test
     public void appInstallAndroidTest() {
         String fgpsPackageName = "com.lexa.fakegps";
-        androidDriver = (AndroidDriver) driver;
 
         Boolean isAppInstalled = checkIfAppIsInstalled(fgpsPackageName);
         removeAppIfInstalledAlready(fgpsPackageName, isAppInstalled);
@@ -51,6 +63,18 @@ public class AppInstallManagementTest extends BaseTest {
         Boolean isAppInstalled = androidDriver.isAppInstalled(fgpsPackageName);
         System.out.println("Fake GPS Installed: " + isAppInstalled);
         return isAppInstalled;
+    }
+
+    /**
+     * Gets all application strings (not sure where to use this yet. :))
+     */
+    @Test
+    private void getAppStrings() {
+        File basePath = new File("src");
+        File outputPath = new File(basePath, "");
+        Map<String, String> appStrings = androidDriver.getAppStringMap(
+                "en", "test/results");
+        appStrings.forEach((k, v) -> {System.out.println(k + "... " + v);});
     }
 
     private void removeAppIfInstalledAlready(String fgpsPackageName, Boolean isAppInstalled) {
