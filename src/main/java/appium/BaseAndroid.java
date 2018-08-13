@@ -19,7 +19,7 @@ public class BaseAndroid {
         File app = new File(srcDir, "/test/resources/android/ApiDemos-debug.apk");
 
         DesiredCapabilities capabilities = new DesiredCapabilities();
-        capabilities.setCapability(MobileCapabilityType.DEVICE_NAME, "BasicAndroidDevice");
+        capabilities.setCapability(MobileCapabilityType.DEVICE_NAME, "Automation");
         capabilities.setCapability(MobileCapabilityType.APP, app.getAbsolutePath());
         capabilities.setCapability("appPackage", "io.appium.android.apis");
         capabilities.setCapability("appActivity", "io.appium.android.apis.ApiDemos");
