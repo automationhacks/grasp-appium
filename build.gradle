@@ -9,6 +9,12 @@ repositories {
     mavenCentral()
 }
 
+test {
+    useTestNG()
+    include 'appium.examplesfromappiumio.commands.device.PerformanceDataTests'
+    testLogging.showStandardStreams = true
+}
+
 dependencies {
     compile group: 'io.appium', name: 'java-client', version: '5.0.4'
     compile group: 'org.seleniumhq.selenium', name: 'selenium-server', version: '3.11.0'

@@ -1,0 +1,15 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="terminal runs">
+    <test name="performance data test">
+        <groups>
+            <run>
+                <include name="run_this"/>
+            </run>
+        </groups>
+
+        <classes>
+            <class name="appium.examplesfromappiumio.commands.device.PerformanceDataTests"/>
+        </classes>
+    </test>
+</suite>
