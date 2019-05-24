@@ -17,6 +17,15 @@ def driver():
 
     caps = {
         'platformName': 'Android',
+        'deviceName': 'Android device',
+        "appActivity": "com.gojek.home.GojekSplash",
+          "appPackage": "com.gojek.app.staging",
+        'app': '/Users/gaurav/gojek/test/optimus/app/GoJekConsumer.apk',
+        'newCommandTimeOut': '2400000'
+    }
+
+    caps = {
+        'platformName': 'Android',
         'deviceName': 'Automation',
         'appPackage': 'io.appium.android.apis',
         'appActivity': 'io.appium.android.apis.ApiDemos',
@@ -39,3 +48,13 @@ def test_appium_functionalities(driver):
 
     location.send_keys('1234,4566')
     time.sleep(10)
+
+
+{
+        "platformName": "Android",
+        "deviceName": "Android device",
+        "appActivity": "com.gojek.home.GojekSplash",
+          "appPackage": "com.gojek.app.staging",
+        "app": "/Users/gaurav/gojek/test/optimus/app/GoJekConsumer.apk",
+        "newCommandTimeOut": "2400000"
+    }
