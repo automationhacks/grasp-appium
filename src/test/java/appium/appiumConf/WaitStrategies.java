@@ -4,10 +4,6 @@ import appium.BaseAndroid;
 import io.appium.java_client.AppiumDriver;
 import org.junit.Assert;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterMethod;
@@ -18,7 +14,6 @@ import java.util.concurrent.TimeUnit;
 
 public class WaitStrategies {
     private AppiumDriver driver;
-
 
     private String accessibility = "//android.widget.TextView[contains(@text, 'Accessibility')]";
     private String customView = "//android.widget.TextView[contains(@text, 'Custom View')]";
@@ -68,6 +63,6 @@ public class WaitStrategies {
 
     @AfterMethod
     public void after() {
-       driver.quit();
+        driver.quit();
     }
 }
